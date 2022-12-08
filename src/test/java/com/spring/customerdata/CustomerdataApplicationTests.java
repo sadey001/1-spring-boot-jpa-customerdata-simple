@@ -47,6 +47,7 @@ class CustomerdataApplicationTests {
 	void getCustomersTest() {
 		repository.save(getCustomer());
 		Iterable<Customer> customers = repository.findAll();
+		System.out.println(customers);
 		Customer customer = customers.iterator().next();
 		
 		assertEquals(customer.getName(),"Sanat Dey");
@@ -77,6 +78,7 @@ class CustomerdataApplicationTests {
 		Customer customer = new Customer();
 		customer.setName("Sanat Dey");
 		customer.setEmail("deysanat001@gmail.com");
+		customer.setRole_id(1);
 		
 		return customer;
 	}
